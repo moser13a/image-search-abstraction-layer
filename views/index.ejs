@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="gallery" style ='width: 60%'>
+      <%data.forEach(function(image){%>
+
+
+            <div class="wrapper">
+              <h4><%=image.title%></h4>
+
+              <div style = 'background: url("<%-image.thumb%>");    background-position: center;    background-repeat: no-repeat;width:200px;height:200px; display: inline-block' ></div>
+            </div>
+
+
+
+
+      <%});%>
+    </div>
+
+  </body>
+</html>
