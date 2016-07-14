@@ -34,13 +34,20 @@ function saveRecent(recent){
     }
   });
 }
-var outputFilename = './tmp/tmp.json'
+var outputFilename = './tmp/tmp.json';
+app.get('/',function (req,res) {
+  res.render('welcome');
+});
+
 app.get('/:query',function(req, res) {
   var query =  req.params.query;
   var arr = [];
   var offset = req.query.offset;
   querySave = new Recent({'query':query});
-  saveRecent(querySave);
+  if (query !=='favico.ico') {
+    saveRecent(querySave);
+
+  }
   search.images(query,{top:10,skip:offset*10},function(err, data) {
     // console.log(data);
     for (var i = 0; i < data.length; i++) {
