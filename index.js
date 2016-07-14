@@ -44,7 +44,7 @@ app.get('/:query',function(req, res) {
   var arr = [];
   var offset = req.query.offset;
   querySave = new Recent({'query':query});
-  if (query !=='favico.ico') {
+  if (query !=='favicon.ico') {
     saveRecent(querySave);
 
   }
